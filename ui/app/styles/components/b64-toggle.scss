@@ -1,0 +1,18 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: BUSL-1.1
+ */
+
+.b64-toggle {
+  padding: 0.75rem;
+  font-size: $size-9;
+}
+.b64-toggle.is-input {
+  box-shadow: none;
+}
+.b64-toggle.is-textarea {
+  @extend .is-compact;
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.25rem;
+}
