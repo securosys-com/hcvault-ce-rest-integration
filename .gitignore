@@ -1,0 +1,12 @@
+./build.sh
+buildDockerImage.sh
+./docker/*
+vault_exec
+vault.exe
+vendor
+./config.hcl
+./config-hsm.yml
+./bin/*
+Installation Guide
+deploy
+.gitlab-ci.yml
