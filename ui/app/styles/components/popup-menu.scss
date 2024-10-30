@@ -1,0 +1,161 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: BUSL-1.1
+ */
+
+.popup-menu-content,
+.ember-power-select-options {
+  border-radius: $radius;
+  margin: -2px 0 0 0;
+
+  & > .box {
+    border-radius: $radius;
+    box-shadow: $box-shadow, $box-shadow-middle;
+    padding: 0;
+    position: relative;
+    width: 210px;
+  }
+
+  &.is-wide > .box {
+    width: $drawer-width;
+  }
+
+  .confirm-action span .button {
+    display: block;
+    margin: 0.25rem auto;
+    width: 95%;
+  }
+
+  .menu {
+    padding: $size-11 0;
+  }
+
+  button.link,
+  a,
+  .ember-power-select-option,
+  .ember-power-select-option[aria-current='true'],
+  .menu-item {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    display: block;
+    height: auto;
+    font-size: $size-7;
+    font-weight: $font-weight-semibold;
+    padding: $size-9 $size-8;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  button.link,
+  .ember-power-select-option,
+  .ember-power-select-option[aria-current='true'],
+  a {
+    background-color: $white;
+    color: $grey-darkest;
+
+    &:hover {
+      background-color: $ui-gray-050;
+      color: $ui-gray-900;
+    }
+
+    &.active,
+    &.is-active {
+      background-color: transparent;
+      color: $blue;
+    }
+
+    &.is-destroy {
+      color: $red;
+
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
+
+    &.disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background: transparent;
+        cursor: default;
+      }
+    }
+  }
+
+  .menu-label {
+    color: $grey-dark;
+    font-size: $size-9;
+    font-weight: $font-weight-normal;
+    letter-spacing: 0;
+    margin: 0;
+    padding: $size-10 $size-8 0;
+    text-transform: uppercase;
+  }
+
+  .menu-content {
+    padding: $size-10 $size-8;
+  }
+
+  hr {
+    background-color: $ui-gray-200;
+    margin: 0;
+  }
+}
+
+.popup-menu-content p {
+  box-shadow: none;
+  padding-top: $size-10;
+  font-weight: $font-weight-semibold;
+}
+
+.popup-menu-content .level-left {
+  flex-shrink: 1;
+}
+
+// when you need to limit the height and have dropdown scroll in child nav element
+.popup-menu-content > nav.scroll {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.list-item-row,
+.info-table-row,
+.wizard-dismiss-menu {
+  .popup-menu-trigger {
+    height: 2.5rem;
+    min-width: 0;
+    padding: 0;
+    width: 2.5rem;
+  }
+}
+
+.ember-basic-dropdown-content {
+  background-color: transparent;
+
+  &--left.popup-menu {
+    margin: 0px 0 0 -8px;
+  }
+
+  &--below {
+    &.ember-basic-dropdown--transitioning-in {
+      animation: drop-fade-above 0.15s;
+    }
+
+    &.ember-basic-dropdown--transitioning-out {
+      animation: drop-fade-above 0.15s reverse;
+    }
+  }
+
+  &--above {
+    &.ember-basic-dropdown--transitioning-in {
+      animation: drop-fade-below 0.15s;
+    }
+
+    &.ember-basic-dropdown--transitioning-out {
+      animation: drop-fade-below 0.15s reverse;
+    }
+  }
+}
