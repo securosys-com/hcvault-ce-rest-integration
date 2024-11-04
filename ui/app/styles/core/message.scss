@@ -1,0 +1,108 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: BUSL-1.1
+ */
+
+.alert-title {
+  font-size: $size-5;
+  font-weight: $font-weight-bold;
+}
+
+.message {
+  background: $blue-010;
+  border: 1px solid $blue-100;
+  margin-bottom: $spacing-s;
+  padding: $spacing-s $spacing-m $spacing-m $spacing-s;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $size-4;
+  }
+
+  .message-icon {
+    color: $blue;
+    margin-right: $spacing-xs;
+  }
+
+  .message-title {
+    color: $blue-500;
+    font-size: 16px;
+    font-weight: $font-weight-bold;
+    line-height: 1.25;
+  }
+
+  .message-body {
+    border: 0;
+    padding: 1em 1.25em;
+    margin-top: $spacing-xxs;
+  }
+
+  // message types, see message-types.js
+  &.is-danger {
+    background: $red-010;
+    border: 1px solid $red-050;
+
+    .message-body {
+      color: $red-700;
+    }
+
+    .message-icon {
+      color: $red-500;
+    }
+
+    .message-title {
+      color: $red-700;
+    }
+  }
+
+  &.is-highlight {
+    background: $yellow-010;
+    border: 1px solid $yellow-100;
+
+    .message-body {
+      color: $ui-gray-900;
+    }
+
+    .message-icon {
+      color: $yellow-500;
+    }
+
+    .message-title {
+      color: $orange-700;
+    }
+  }
+
+  &.is-info {
+    background-color: $blue-010;
+
+    .message-body {
+      color: $blue-700;
+    }
+
+    .message-header {
+      background-color: $blue-500;
+      color: $white;
+    }
+
+    .message-title {
+      color: $blue-700;
+    }
+  }
+
+  &.is-success {
+    background: $green-010;
+    border: 1px solid $green-100;
+
+    .message-body {
+      color: $green-900;
+    }
+
+    .message-icon {
+      color: $green-500;
+    }
+
+    .message-title {
+      color: $green-700;
+    }
+  }
+}
