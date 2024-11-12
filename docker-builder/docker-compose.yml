@@ -1,0 +1,54 @@
+  version: "3.3"
+  services:
+    hcvault_binaries_builder:
+      platform: linux/amd64
+      image: golang:1.23.1-alpine3.20
+      container_name: hcvault_binaries_builder
+      restart: always      
+      volumes:
+        - ./:/docker-scripts # place for application configuration files
+        - ./../:/go/src # place for application configuration files
+      command: sh -c "sleep 1s &&
+              apk update &&
+              apk add bash &&
+              apk add perl-utils &&
+              apk add make &&
+              apk add zip &&
+              apk add git && 
+              apk add nodejs npm &&
+              cd /docker-scripts && 
+              sh build-many-binaries-in-docker.sh"
+    hcvault_binary_builder:
+      platform: linux/amd64
+      image: golang:1.23.1-alpine3.20
+      container_name: hcvault_binary_builder
+      restart: always      
+      volumes:
+        - ./:/docker-scripts # place for application configuration files
+        - ./../:/go/src # place for application configuration files
+      command: sh -c "sleep 1s &&
+              apk update &&
+              apk add bash &&
+              apk add perl-utils &&
+              apk add make &&
+              apk add nodejs npm &&
+              apk add git && 
+              cd /docker-scripts && 
+              sh build-binary-in-docker.sh"
+    hcvault_ui_builder:
+      platform: linux/amd64
+      image: golang:1.23.1-alpine3.20
+      container_name: hcvault_ui_builder
+      restart: always      
+      volumes:
+        - ./:/docker-scripts # place for application configuration files
+        - ./../:/go/src # place for application configuration files
+      command: sh -c "sleep 1s &&
+              apk update &&
+              apk add bash &&
+              apk add perl-utils &&
+              apk add make &&
+              apk add nodejs npm &&
+              apk add git && 
+              cd /docker-scripts && 
+              sh build-ui-in-docker.sh"
