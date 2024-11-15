@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+    run:
+        container_name: securosys_hashicorp_vault
+        environment:
+            - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+        volumes:
+            - securosys_hashicorp_vault_config:/etc/app/config
+            - securosys_hashicorp_vault_db:/etc/app/db
+            - securosys_hashicorp_vault_plugins:/etc/app/plugins 
+        ports:
+            - '0.0.0.0:8200:8200'
+            - '0.0.0.0:8201:8201'
+        image: securosys.jfrog.io/hcvault-ce-rest-integration/hcvault-ce-rest-integration:latest
+volumes:
+  securosys_hashicorp_vault_config:
+    driver: local
+    driver_opts:
+       o: bind
+       type: none
+       # Local absolute path to directory which contains all config files
+       device: ./config-files/vault
+  securosys_hashicorp_vault_db:
+    driver: local
+    driver_opts:
+       o: bind
+       type: none
+       # Local absolute path to directory where we want to store database
+       device: ./config-files/db
+  securosys_hashicorp_vault_plugins:
+    driver: local
+    driver_opts:
+       o: bind
+       type: none
+       # Local absolute path to directory where are stored custom plugins
+       device: ./config-files/plugins
