@@ -1,12 +1,18 @@
 # Securosys REST-based HSM integration in HashiCorp Vault CE
 
+> [!warning]
+> Securosys is **no longer supporting** the integration with HashiCorp Vault Community Edition.
+> This affects users of this fork of HashiCorp Vault, which added
+> REST/TSB-based auto-unsealing and using HSM-backed keys in the PKI engine.
+> Users are encouraged to migrate to OpenBao, which natively supports these features through its plugin system.
+> Please see the [OpenBao guide](https://docs.securosys.com/openbao/overview) for details.
+> HashiCorp Vault Enterprise is unaffected and remains supported.
+
 This HashiCorp Vault Community Edition update implements a platform-agnostic REST-based HSM interface with zero library installation, while eliminating connectivity hurdles by using secure web connections (TLS). This facilitates the use and deployment in clustered and multi-cloud environments. Moreover, Securosys HSM innovations like hardware enforced multi-authorization are at oneís disposal.
 Security is paramount, experience Securosys Primus HSM or CloudsHSM integration without hassle from the very beginning.
 
 - Unlock your Vault with the security of an HSM
 - Make use of multi-authorization workflows for compliance applications
-
-This integration is actively maintained by Securosys SA.
 
 ## Table of Contents
 
