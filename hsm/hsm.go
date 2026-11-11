@@ -97,7 +97,6 @@ func (tsb *TSBClient) TSBCall(apiKeyName string, method string, path string, jso
 		client.Transport = &http.Transport{
 			TLSClientConfig: &tls.Config{
 				RootCAs:            caCertPool,
-				InsecureSkipVerify: true,
 				Certificates:       []tls.Certificate{clientTLSCert},
 			},
 		}
